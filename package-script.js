@@ -69,18 +69,14 @@ const createExport = ( dirPath, dirName) => {
     fs.readdirSync(dirPath).forEach(fileName => {
         // 获取对应文件的路径
         const filePath = path.resolve(dirPath,fileName)
-        // 定义别名
-        const fileNameAlias = fileName + 'S'
+
+        // 定义生成的文件名
+        let curFileName = ''
+
         // 若为文件夹则进行添加
         if(fs.lstatSync(filePath).isDirectory()){
-            importList.push(
-                `import ${fileNameAlias} from './${dirName}/${fileName}';`
-            ) 
-            exportList.push(
-                `export const ${varPrefix + fileName} = ${fileNameAlias};`
-            )
-            exportDefaultList.push(varPrefix + fileName)
-
+            // 更新文件名
+            curFileName = fileName
             // 检查是否存在index.js文件
             const indexPath = path.resolve(filePath,'./index.ts')
             // 若不存在则进行创建
@@ -88,6 +84,32 @@ const createExport = ( dirPath, dirName) => {
                 // 写入导出空方法
                 fs.writeFileSync(indexPath, `export default () => {}`)
             }
+        }
+        
+        if(fileName.lastIndexOf('.ts') >0 && fileName.lastIndexOf('.d.ts') === -1){
+            // 更新文件名
+            curFileName = fileName.replace('.ts','')
+            // 检查内容是否存在导出
+            const curFileContent = fs.readFileSync(filePath,{ encoding: 'utf-8' })
+            // 若内部不存在导出则进行添加
+            if(!curFileContent.includes('export default')){
+                // 重新写入
+                fs.writeFileSync(filePath, curFileContent + '\n' + 'export default () => {}')
+            }
+        }
+
+        // 若存在
+        if(curFileName){
+            // 定义别名
+            const fileNameAlias = curFileName + 'S'
+
+            importList.push(
+                `import ${fileNameAlias} from './${dirName}/${curFileName}';`
+            ) 
+            exportList.push(
+                `export const ${varPrefix + curFileName} = ${fileNameAlias};`
+            )
+            exportDefaultList.push(varPrefix + curFileName)
         }
     })
 } 

@@ -13,7 +13,7 @@
 	"uiPrefix": "$",
 	"outputDir": "dist",
 	"main": "dist/s2w-js-min.js",
-	"buildDate": "2022-10-15 18:49:02",
+	"buildDate": "2022-10-15 19:48:07",
 	"version": "1.0.5",
 	"date": "2022-10-15 16:00:44",
 	"versionLists": [

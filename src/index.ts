@@ -1,10 +1,10 @@
 import uiTestS from './ui/uiTest';
-import utilsTestS from './utils/utilsTest';
+import isBooS from './utils/isBoo';
 
 export const $uiTest = uiTestS;
-export const utilsTest = utilsTestS;
+export const isBoo = isBooS;
 
 export default {
   $uiTest,
-  utilsTest 
+  isBoo 
 }

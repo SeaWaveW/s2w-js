@@ -16,7 +16,7 @@
  *                 2022-10-15 15:29:04 , 2022-10-15 15:43:59 , 2022-10-15 15:49:27 , 2022-10-15 15:57:47 , 2022-10-15 16:00:44
  *
  *             Released under the MIT License.
- *             hash: da36cf22b040b8ee098b
+ *             hash: 5070551be7ad2d57dcee
  *
  */
 /*
@@ -47,7 +47,7 @@ return /******/ (function() { // webpackBootstrap
   \**********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"$uiTest\": function() { return /* binding */ $uiTest; },\n/* harmony export */   \"utilsTest\": function() { return /* binding */ utilsTest; }\n/* harmony export */ });\n/* harmony import */ var _ui_uiTest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ui/uiTest */ \"./src/ui/uiTest/index.ts\");\n/* harmony import */ var _utils_utilsTest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/utilsTest */ \"./src/utils/utilsTest/index.ts\");\n\r\n\r\nvar $uiTest = _ui_uiTest__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\nvar utilsTest = _utils_utilsTest__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    $uiTest: $uiTest,\r\n    utilsTest: utilsTest\r\n});\r\n\n\n//# sourceURL=webpack://s2w/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"$uiTest\": function() { return /* binding */ $uiTest; },\n/* harmony export */   \"isBoo\": function() { return /* binding */ isBoo; }\n/* harmony export */ });\n/* harmony import */ var _ui_uiTest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ui/uiTest */ \"./src/ui/uiTest/index.ts\");\n/* harmony import */ var _utils_isBoo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/isBoo */ \"./src/utils/isBoo.ts\");\n\r\n\r\nvar $uiTest = _ui_uiTest__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\nvar isBoo = _utils_isBoo__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    $uiTest: $uiTest,\r\n    isBoo: isBoo\r\n});\r\n\n\n//# sourceURL=webpack://s2w/./src/index.ts?");
 
 /***/ }),
 
@@ -61,13 +61,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
-/***/ "./src/utils/utilsTest/index.ts":
-/*!**************************************!*\
-  !*** ./src/utils/utilsTest/index.ts ***!
-  \**************************************/
+/***/ "./src/utils/isBoo.ts":
+/*!****************************!*\
+  !*** ./src/utils/isBoo.ts ***!
+  \****************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () { });\r\n\n\n//# sourceURL=webpack://s2w/./src/utils/utilsTest/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () { });\r\n\n\n//# sourceURL=webpack://s2w/./src/utils/isBoo.ts?");
 
 /***/ })
 
