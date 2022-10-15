@@ -43,7 +43,7 @@ module.exports = {
                 ${pkg.versionDates.join(' , ')} \n
             Released under the MIT License.
             hash: [hash]
-        `) 
+        `),
     ],
     resolve: {
         extensions:['.tsx', '.ts']

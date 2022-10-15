@@ -12,23 +12,29 @@
 	"uiName": "ui",
 	"uiPrefix": "$",
 	"outputDir": "dist",
-	"main": "dist/s2w-js-min.js",
-	"buildDate": "2022-10-15 19:48:07",
-	"version": "1.0.5",
-	"date": "2022-10-15 16:00:44",
+	"types": "index.d.ts",
+	"buildDate": "2022-10-15 22:45:46",
+	"version": "1.0.8",
+	"date": "2022-10-15 22:45:46",
 	"versionLists": [
 		"1.0.1              ",
 		"1.0.2              ",
 		"1.0.3              ",
 		"1.0.4              ",
-		"1.0.5              "
+		"1.0.5              ",
+		"1.0.6              ",
+		"1.0.7              ",
+		"1.0.8              "
 	],
 	"versionDates": [
 		"2022-10-15 15:29:04",
 		"2022-10-15 15:43:59",
 		"2022-10-15 15:49:27",
 		"2022-10-15 15:57:47",
-		"2022-10-15 16:00:44"
+		"2022-10-15 16:00:44",
+		"2022-10-15 21:25:21",
+		"2022-10-15 22:14:22",
+		"2022-10-15 22:45:46"
 	],
 	"description": "Library based on raw JavaScript",
 	"descriptionCN": "基于原生JavaScript的库",
@@ -54,6 +60,7 @@
 		"@babel/core": "^7.19.3",
 		"@babel/plugin-transform-runtime": "^7.19.1",
 		"@babel/preset-env": "^7.19.4",
+		"@types/jquery": "^3.5.14",
 		"babel-loader": "^8.2.5",
 		"html-webpack-plugin": "^5.5.0",
 		"minimist": "^1.2.7",
@@ -66,9 +73,11 @@
 	"dependencies": {
 		"moment": "^2.29.4"
 	},
-	"mode": "development",
+	"mode": "production",
 	"outputName": "s2w-js-min.js",
 	"files": [
-		"dist"
-	]
+		"dist",
+		"index.d.ts"
+	],
+	"main": "dist/s2w-js-min.js"
 }

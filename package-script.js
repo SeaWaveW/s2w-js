@@ -12,7 +12,7 @@ pkg.outputName = pkg.name + '-min.js'
 pkg.main = pkg.outputDir + '/'  + pkg.outputName
 
 // 设置白名单
-pkg.files = [ pkg.outputDir ]
+pkg.files = [ pkg.outputDir, pkg.types ]
 
 // 获取命令行参数
 const { mode, type } = require('minimist')(process.argv.slice(2))
