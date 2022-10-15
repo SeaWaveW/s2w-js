@@ -74,7 +74,7 @@ const createExport = ( dirPath, dirName) => {
         // 若为文件夹则进行添加
         if(fs.lstatSync(filePath).isDirectory()){
             importList.push(
-                `import ${fileNameAlias} from '${pkg.aliasPrefix + dirName + '/' + fileName}';`
+                `import ${fileNameAlias} from './${dirName}/${fileName}';`
             ) 
             exportList.push(
                 `export const ${varPrefix + fileName} = ${fileNameAlias};`
@@ -82,7 +82,7 @@ const createExport = ( dirPath, dirName) => {
             exportDefaultList.push(varPrefix + fileName)
 
             // 检查是否存在index.js文件
-            const indexPath = path.resolve(filePath,'./index.js')
+            const indexPath = path.resolve(filePath,'./index.ts')
             // 若不存在则进行创建
             if(!fs.existsSync(indexPath)){
                 // 写入导出空方法
@@ -102,8 +102,6 @@ pkg.childDirList.forEach(dirName => {
     const dirPath = path.resolve(__dirname, pkg.entryDir + '/' + dirName)
     // 若不存在该目录则创建
     if(!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
-    // 更新别名
-    pkg.alias[`${pkg.aliasPrefix + dirName}`] = pkg.entryDir + '/' + dirName
     // 生成导入导出
     createExport( dirPath, dirName)
 })

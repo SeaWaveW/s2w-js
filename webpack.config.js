@@ -46,28 +46,23 @@ module.exports = {
         `) 
     ],
     resolve: {
-        // 路径别名： html文件无法使用！
-        extensions:['.js'],
-        alias: {
-            ...(() => {
-                const pkgAlias = {}
-                Object.keys(pkg.alias).forEach(key => {
-                    pkgAlias[key] = pathJoin( pkg.alias[key] )
-                })
-                return pkgAlias
-            })()
-        }
+        extensions:['.tsx', '.ts']
     },
     module: {
         rules: [
+            // {
+            //     test: /\.m?js$/,
+            //     use:[
+            //         'babel-loader'
+            //     ],
+            //     exclude: /node_modules/,
+            //     // exclude: new RegExp(`(node_modules|${resourceName})`)
+            // },
             {
-                test: /\.m?js$/,
-                use:[
-                    'babel-loader'
-                ],
+                test: /\.tsx?$/,
+                use: 'ts-loader',
                 exclude: /node_modules/,
-                // exclude: new RegExp(`(node_modules|${resourceName})`)
-            },
+            }
         ]
     }
 }

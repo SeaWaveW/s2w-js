@@ -1,2 +1,2 @@
-import { utilsTest } from '../../dist/sw-js-min'
+import { utilsTest } from '../../dist/s2w-js-min'
 console.warn('sw',utilsTest)

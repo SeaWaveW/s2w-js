@@ -1,2 +1,139 @@
-/*! For license information please see s2w-js-min.js.LICENSE.txt */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.s2w=t():e.s2w=t()}(this,(function(){return function(){"use strict";var e={d:function(t,n){for(var o in n)e.o(n,o)&&!e.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:n[o]})},o:function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r:function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},t={};e.r(t),e.d(t,{$uiTest:function(){return n},default:function(){return r},utilsTest:function(){return o}});var n=function(){},o=function(){},r={$uiTest:n,utilsTest:o};return t}()}));
+/*!
+ * 
+ *             s2w-js
+ *             @description: Library based on raw JavaScript
+ *
+ *                           基于原生JavaScript的库
+ *
+ *             @version 1.0.5
+ *
+ *             @date 2022-10-15 16:00:44
+ *
+ *             @versions history
+ *
+ *                 1.0.1               , 1.0.2               , 1.0.3               , 1.0.4               , 1.0.5
+ *
+ *                 2022-10-15 15:29:04 , 2022-10-15 15:43:59 , 2022-10-15 15:49:27 , 2022-10-15 15:57:47 , 2022-10-15 16:00:44
+ *
+ *             Released under the MIT License.
+ *             hash: da36cf22b040b8ee098b
+ *
+ */
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["s2w"] = factory();
+	else
+		root["s2w"] = factory();
+})(this, function() {
+return /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"$uiTest\": function() { return /* binding */ $uiTest; },\n/* harmony export */   \"utilsTest\": function() { return /* binding */ utilsTest; }\n/* harmony export */ });\n/* harmony import */ var _ui_uiTest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ui/uiTest */ \"./src/ui/uiTest/index.ts\");\n/* harmony import */ var _utils_utilsTest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/utilsTest */ \"./src/utils/utilsTest/index.ts\");\n\r\n\r\nvar $uiTest = _ui_uiTest__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\nvar utilsTest = _utils_utilsTest__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    $uiTest: $uiTest,\r\n    utilsTest: utilsTest\r\n});\r\n\n\n//# sourceURL=webpack://s2w/./src/index.ts?");
+
+/***/ }),
+
+/***/ "./src/ui/uiTest/index.ts":
+/*!********************************!*\
+  !*** ./src/ui/uiTest/index.ts ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () { });\r\n\n\n//# sourceURL=webpack://s2w/./src/ui/uiTest/index.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/utilsTest/index.ts":
+/*!**************************************!*\
+  !*** ./src/utils/utilsTest/index.ts ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () { });\r\n\n\n//# sourceURL=webpack://s2w/./src/utils/utilsTest/index.ts?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.ts");
+/******/ 	
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});
