@@ -1,6 +1,6 @@
 {
-	"name": "sw-js",
-	"library": "sw",
+	"name": "s2w-js",
+	"library": "s2w",
 	"libraryTarget": "umd",
 	"globalObject": "this",
 	"entryDir": "src",
@@ -17,19 +17,31 @@
 	},
 	"aliasPrefix": "@",
 	"outputDir": "dist",
-	"main": "sw-js-min.js",
-	"buildDate": "2022-10-15 15:12:44",
-	"version": "1.0.0",
-	"date": "",
-	"versionLists": [],
-	"versionDates": [],
+	"main": "dist/s2w-js-min.js",
+	"buildDate": "2022-10-15 16:00:44",
+	"version": "1.0.5",
+	"date": "2022-10-15 16:00:44",
+	"versionLists": [
+		"1.0.1              ",
+		"1.0.2              ",
+		"1.0.3              ",
+		"1.0.4              ",
+		"1.0.5              "
+	],
+	"versionDates": [
+		"2022-10-15 15:29:04",
+		"2022-10-15 15:43:59",
+		"2022-10-15 15:49:27",
+		"2022-10-15 15:57:47",
+		"2022-10-15 16:00:44"
+	],
 	"description": "Library based on raw JavaScript",
 	"descriptionCN": "基于原生JavaScript的库",
 	"scripts": {
 		"build": "node ./package-script.js --mode=development && webpack",
-		"publish-small": "node ./package-script.js --mode=production --type=small && webpack",
-		"publish-middle": "node ./package-script.js --mode=production --type=middle && webpack",
-		"publish-large": "node ./package-script.js --mode=production --type=large  && webpack",
+		"build-small": "node ./package-script.js --mode=production --type=small && webpack",
+		"build-middle": "node ./package-script.js --mode=production --type=middle && webpack",
+		"build-large": "node ./package-script.js --mode=production --type=large  && webpack",
 		"test-script": "node test/script/index.js",
 		"test-esModule": "webpack-dev-server --config test/esModule/webpack.test.js",
 		"test-common": "node ./test/common.js"
@@ -37,11 +49,11 @@
 	"keywords": [
 		"js",
 		"js-ui",
-		"sw",
+		"s2w",
 		"utils",
 		"tools"
 	],
-	"author": "Lang",
+	"author": "s2w",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.19.3",
@@ -57,5 +69,9 @@
 	"dependencies": {
 		"moment": "^2.29.4"
 	},
-	"mode": "development"
+	"mode": "production",
+	"outputName": "s2w-js-min.js",
+	"files": [
+		"dist"
+	]
 }

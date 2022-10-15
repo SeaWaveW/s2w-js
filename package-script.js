@@ -8,7 +8,11 @@ const path = require('path')
 const pkg = require('./package.json')
 
 // 设置打包出口文件
-pkg.main = pkg.name + '-min.js'
+pkg.outputName = pkg.name + '-min.js'
+pkg.main = pkg.outputDir + '/'  + pkg.outputName
+
+// 设置白名单
+pkg.files = [ pkg.outputDir ]
 
 // 获取命令行参数
 const { mode, type } = require('minimist')(process.argv.slice(2))
@@ -31,14 +35,14 @@ if(isPublish){
     const { scripts,version } = pkg
     const prevVersion = version.split('.')
 
-    if(scripts['publish-small'].includes(type)){
+    if(scripts['build-small'].includes(type)){
         prevVersion[2] = parseInt(prevVersion[2]) + 1
     }
-    else if(scripts['publish-middle'].includes(type)){
+    else if(scripts['build-middle'].includes(type)){
         prevVersion[1] = parseInt(prevVersion[1]) + 1
         prevVersion[2] = 1
     }
-    else if(scripts['publish-large'].includes(type)){
+    else if(scripts['build-large'].includes(type)){
         prevVersion[0] = parseInt(prevVersion[0]) + 1
         prevVersion[2] = 1
     }
@@ -46,7 +50,6 @@ if(isPublish){
     const aliVDlength = pkg.date.length - pkg.version.length
     let versionSuffix = ''
     Array.from({length:aliVDlength}, () => versionSuffix+= ' ')
-    console.warn(aliVDlength,versionSuffix,versionSuffix.length)
     pkg.versionLists.push(pkg.version + versionSuffix)
 }
 

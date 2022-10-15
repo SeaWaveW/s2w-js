@@ -8,7 +8,7 @@ module.exports = {
     entry: pathJoin( pkg.entryDir + '/' + pkg.entryName), // 入口文件
     output: {
         path: pathJoin(`./${pkg.outputDir}`), // 输出目录
-        filename: pkg.main, // 输出文件
+        filename: pkg.outputName, // 输出文件
         library: pkg.library, // 暴露到浏览器环境的全局变量名称
         libraryTarget: pkg.libraryTarget, // 指定模块化规范
         globalObject: pkg.globalObject, // 防止node端self报错
