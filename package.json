@@ -6,6 +6,7 @@
 	"entryDir": "src",
 	"entryName": "index.ts",
 	"childDirList": [
+		"is",
 		"ui",
 		"utils"
 	],
@@ -13,7 +14,7 @@
 	"uiPrefix": "$",
 	"outputDir": "dist",
 	"types": "index.d.ts",
-	"buildDate": "2022-10-15 22:45:46",
+	"buildDate": "2022-10-16 05:04:00",
 	"version": "1.0.8",
 	"date": "2022-10-15 22:45:46",
 	"versionLists": [
@@ -73,7 +74,7 @@
 	"dependencies": {
 		"moment": "^2.29.4"
 	},
-	"mode": "production",
+	"mode": "development",
 	"outputName": "s2w-js-min.js",
 	"files": [
 		"dist",
