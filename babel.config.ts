@@ -14,7 +14,7 @@ module.exports = {
         ]
     ],
     plugins: [
-        'transform-es3-property-literals', // 关键字引号
+        '@babel/plugin-transform-reserved-words', // 关键字引号
         '@babel/plugin-transform-runtime', // 减少代码体积
         '@babel/plugin-syntax-top-level-await', // 顶层直接使用await，无需与async搭配(webpack5需要开启)
     ]

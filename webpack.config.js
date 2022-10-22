@@ -3,6 +3,9 @@ const pkg = require('./package.json') // 获取项目信息
 const webpack = require('webpack')
 const pathJoin = (filePath) => require('path').resolve(__dirname,filePath)
 
+// 代码压缩
+const TerserWebpackPlugin = require('terser-webpack-plugin')
+
 module.exports = {
     mode: pkg.mode, // 打包模式
     entry: pathJoin( pkg.entryDir + '/' + pkg.entryName), // 入口文件
@@ -50,21 +53,24 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.tsx?$/,
-            //     use:[
-            //         'babel-loader'
-            //     ],
-            //     exclude: /node_modules/,
-            // },
             {
                 test: /\.tsx?$/,
                 use: [
-                    'babel-loader',
                     'ts-loader'
                 ],
                 exclude: /node_modules/,
             }
+        ]
+    },
+    optimization:{
+        minimize: true,
+        minimizer:[
+            new TerserWebpackPlugin({
+                terserOptions:{
+                    ie8: true,
+                    safari10: true
+                },
+            })
         ]
     }
 }
