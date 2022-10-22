@@ -9,9 +9,10 @@ import isNumS from './is/isNum';
 import isObjS from './is/isObj';
 import isStrS from './is/isStr';
 import isUndS from './is/isUnd';
+import browserS from './utils/browser';
+import colorS from './utils/color';
 import eachS from './utils/each';
 import randomS from './utils/random';
-import shimS from './utils/shim';
 
 export const isArr = isArrS;
 export const isBoo = isBooS;
@@ -24,9 +25,10 @@ export const isNum = isNumS;
 export const isObj = isObjS;
 export const isStr = isStrS;
 export const isUnd = isUndS;
+export const browser = browserS;
+export const color = colorS;
 export const each = eachS;
 export const random = randomS;
-export const shim = shimS;
 
 export default {
   isArr,
@@ -40,7 +42,8 @@ export default {
   isObj,
   isStr,
   isUnd,
+  browser,
+  color,
   each,
-  random,
-  shim 
+  random 
 }

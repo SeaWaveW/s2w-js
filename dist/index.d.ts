@@ -9,11 +9,15 @@ export declare const isNum: (value: any) => boolean;
 export declare const isObj: (value: any) => boolean;
 export declare const isStr: (value: any) => boolean;
 export declare const isUnd: (value: any) => boolean;
+export declare const browser: () => {
+    name: string;
+    version: string;
+};
+export declare const color: (color1: string, color2: string, ratio: number) => string;
 export declare const each: (value: any) => {
     for: Function;
 };
 export declare const random: (start: number, end: number, float: number) => number;
-export declare const shim: () => void;
 declare const _default: {
     isArr: (value: any) => boolean;
     isBoo: (value: any) => boolean;
@@ -26,10 +30,14 @@ declare const _default: {
     isObj: (value: any) => boolean;
     isStr: (value: any) => boolean;
     isUnd: (value: any) => boolean;
+    browser: () => {
+        name: string;
+        version: string;
+    };
+    color: (color1: string, color2: string, ratio: number) => string;
     each: (value: any) => {
         for: Function;
     };
     random: (start: number, end: number, float: number) => number;
-    shim: () => void;
 };
 export default _default;
