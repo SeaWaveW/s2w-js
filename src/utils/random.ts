@@ -1,5 +1,6 @@
 import isNum from "../is/isNum"
 import isBoo from "../is/isBoo"
+import each from "./each"
 /**
  * 生成随机数
  * @param start 开始数字
@@ -8,7 +9,7 @@ import isBoo from "../is/isBoo"
  * @returns number
  */
 
-const random = (start: number, end: number, float: any):number => {
+const random = (start: number, end: number, float: number):number => {
     // 定义起始
     const newStart:number = isNum(start) ? Math.round(start) : 0
     // 定义结束
@@ -45,8 +46,18 @@ const random = (start: number, end: number, float: any):number => {
         if(floatSum){
             // 按点分割
             const resultList: Array<string> = `${result}`.split('.')
-            // 从下标为0开始截取
-            resultList[1] = resultList[1].slice(0,floatSum)
+            // 将小数点拼接浮点话化
+            let floatStr: string = String( Number( `0.${resultList[1].slice(0,floatSum)}` ) ).split('.')[1]
+            // 若小数位数小于需要的
+            if(floatStr.length < floatSum){
+                // 循环次数
+                each(floatSum - floatStr.length).for(()  => {
+                    // 递归调用
+                    floatStr += random(1,9,0)
+                })
+            }
+            // 最后恢复
+            resultList[1] = floatStr
             // 再按点拼接 再 转成数字
             result = Number(resultList.join('.'))
         }

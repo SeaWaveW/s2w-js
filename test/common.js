@@ -2,9 +2,9 @@
 // sw.test()
 
 const {each, random} = require('../dist/s2w-js-min.js')
-// each(10).for((item,index) =>  {
-//     console.error('num',item,index)
-// })
+each(6-4).for((item,index) =>  {
+    console.error('num',item,index)
+})
 // each('a').for((item,index) =>  {
 //     console.error('str',item,index)
 // })
@@ -14,4 +14,4 @@ const {each, random} = require('../dist/s2w-js-min.js')
 // const obj2 = new Function('return ' + obj1.toString())()
 // console.error( Object.keys(obj1.prototype) ) 
 
-console.log( random(0,11,false) )
+console.log( random(0,11) )

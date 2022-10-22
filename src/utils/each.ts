@@ -14,7 +14,10 @@ import isStr from "../is/isStr"
  *  }
  * }
  */
-const each = (value: any):object => {
+type eachObj = {
+    for: Function
+}
+const each = (value: any):eachObj => {
     // 定义默认返回
     let forFun = ( callBack: Function ):void => {}
 
