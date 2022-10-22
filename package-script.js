@@ -27,7 +27,7 @@ pkg.mode = mode
 pkg.buildDate = moment().format('YYYY-MM-DD HH:mm:ss')
 
 // 若为发布操作-更新package.json内容
-if(isPublish){
+if(isPublish && type){
     // 更新发布时间
     pkg.date = pkg.buildDate
     pkg.versionDates.push(pkg.date)

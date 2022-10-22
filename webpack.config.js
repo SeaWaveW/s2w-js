@@ -51,16 +51,18 @@ module.exports = {
     module: {
         rules: [
             // {
-            //     test: /\.m?js$/,
+            //     test: /\.tsx?$/,
             //     use:[
             //         'babel-loader'
             //     ],
             //     exclude: /node_modules/,
-            //     // exclude: new RegExp(`(node_modules|${resourceName})`)
             // },
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                use: [
+                    'babel-loader',
+                    'ts-loader'
+                ],
                 exclude: /node_modules/,
             }
         ]

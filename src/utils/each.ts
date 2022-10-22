@@ -1,6 +1,9 @@
 import isNum from "../is/isNum"
 import isStr from "../is/isStr"
 
+type eachObj = {
+    for: Function
+}
 /**
  * 数字或者字符串循环方法
  * --返回一个对象，对象中包含for方法
@@ -14,9 +17,6 @@ import isStr from "../is/isStr"
  *  }
  * }
  */
-type eachObj = {
-    for: Function
-}
 const each = (value: any):eachObj => {
     // 定义默认返回
     let forFun = ( callBack: Function ):void => {}
