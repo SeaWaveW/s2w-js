@@ -4,6 +4,7 @@
  * @returns boolean
  */
 const isArr = (value: any): boolean => {
-    return Array.isArray(value)
+    // return Array.isArray(value)
+    return value instanceof Array
 }
 export default isArr

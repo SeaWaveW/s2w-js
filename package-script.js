@@ -8,14 +8,15 @@ const path = require('path')
 const pkg = require('./package.json')
 
 // 设置打包出口文件
-pkg.outputName = pkg.name + '-min.js'
+pkg.outputName = 'index.js' // ie9及以上
+pkg.outputNameIe8 = pkg.name + '-min.js' // ie8及以下
 pkg.main = pkg.outputDir + '/'  + pkg.outputName
 
 // 设置白名单
-pkg.files = [ pkg.outputDir, pkg.types ]
+pkg.files = [ pkg.outputDir ]
 
 // 获取命令行参数
-const { mode, type } = require('minimist')(process.argv.slice(2))
+const { mode, type, ie8 } = require('minimist')(process.argv.slice(2))
 
 // 是否为发布模式
 const isPublish = mode === 'production'
@@ -60,6 +61,8 @@ const importList = []
 const exportList = []
 // 全量导出
 const exportDefaultList = []
+// ie8及以下
+const globalList = []
 
 // 生成导出
 const createExport = ( dirPath, dirName) => {
@@ -102,7 +105,7 @@ const createExport = ( dirPath, dirName) => {
         if(curFileName){
             // 定义别名
             const fileNameAlias = curFileName + 'S'
-
+            
             importList.push(
                 `import ${fileNameAlias} from './${dirName}/${curFileName}';`
             ) 
@@ -110,6 +113,10 @@ const createExport = ( dirPath, dirName) => {
                 `export const ${varPrefix + curFileName} = ${fileNameAlias};`
             )
             exportDefaultList.push(varPrefix + curFileName)
+
+            globalList.push(
+                `${varPrefix + curFileName}: ${fileNameAlias}`
+            )
         }
     })
 } 
@@ -143,4 +150,13 @@ fs.writeFileSync(
     + exportList.join('\n')
     + '\n\n'
     + `export default {\n  ${exportDefaultList.join(',\n  ')} \n}`
+)
+
+// 更新ie8文件
+fs.writeFileSync(
+    path.resolve(__dirname, pkg.entryDir + '/' + pkg.oldEntryName),
+
+    importList.join('\n')
+    + '\n\n'
+    + `window['${pkg.library}'] = {\n  ${globalList.join(',\n  ')} \n}`
 )

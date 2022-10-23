@@ -106,6 +106,7 @@
   "exclude":[
     "node_modules",
     "dist",
-    "./babel.config.ts"
+    "babel.config.ts",
+    "src/ie8.ts"
   ]
 }

@@ -5,6 +5,7 @@
 	"globalObject": "this",
 	"entryDir": "src",
 	"entryName": "index.ts",
+	"oldEntryName": "ie8.ts",
 	"childDirList": [
 		"is",
 		"ui",
@@ -14,7 +15,7 @@
 	"uiPrefix": "$",
 	"outputDir": "dist",
 	"types": "dist",
-	"buildDate": "2022-10-23 06:06:50",
+	"buildDate": "2022-10-23 19:27:03",
 	"version": "1.0.8",
 	"date": "2022-10-15 22:45:46",
 	"versionLists": [
@@ -40,13 +41,14 @@
 	"description": "Library based on raw JavaScript",
 	"descriptionCN": "基于原生JavaScript的库",
 	"scripts": {
-		"build": "node ./package-script.js --mode=production && webpack",
-		"build-small": "node ./package-script.js --mode=production --type=small && webpack",
-		"build-middle": "node ./package-script.js --mode=production --type=middle && webpack",
-		"build-large": "node ./package-script.js --mode=production --type=large  && webpack",
+		"build": "node ./package-script.js --mode=production && webpack && npm run ie8prev",
+		"build-small": "node ./package-script.js --mode=production --type=small && webpack && npm run ie8prev",
+		"build-middle": "node ./package-script.js --mode=production --type=middle && webpack && npm run ie8prev",
+		"build-large": "node ./package-script.js --mode=production --type=large  && webpack && npm run ie8prev",
 		"test-script": "node test/script/index.js",
 		"test-esModule": "webpack-dev-server --config test/esModule/webpack.test.js",
-		"test-common": "node ./test/common.js"
+		"test-common": "node ./test/common.js",
+		"ie8prev": "webpack --config ./webpack.ie8prev.js"
 	},
 	"keywords": [
 		"js",
@@ -64,22 +66,26 @@
 		"@babel/preset-env": "^7.19.4",
 		"@types/jquery": "^3.5.14",
 		"babel-loader": "^8.2.5",
+		"core-js": "^3.25.5",
 		"html-webpack-plugin": "^5.5.0",
 		"minimist": "^1.2.7",
 		"ts-loader": "^9.4.1",
 		"typescript": "^4.8.4",
 		"webpack": "^5.74.0",
 		"webpack-cli": "^4.10.0",
-		"webpack-dev-server": "^4.11.1"
+		"webpack-dev-server": "^4.11.1",
+		"webpack-merge": "^5.8.0"
 	},
 	"dependencies": {
 		"moment": "^2.29.4"
 	},
 	"mode": "production",
-	"outputName": "s2w-js-min.js",
+	"outputName": "index.js",
 	"files": [
 		"dist",
 		"dist"
 	],
-	"main": "dist/s2w-js-min.js"
+	"main": "dist/index.js",
+	"outputNameIe8": "s2w-js-min.js",
+	"ie8": false
 }

@@ -1,6 +1,5 @@
 const pkg = require('./package.json') // 获取项目信息
 
-const webpack = require('webpack')
 const pathJoin = (filePath) => require('path').resolve(__dirname,filePath)
 
 // 代码压缩
@@ -8,15 +7,11 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 module.exports = {
     mode: pkg.mode, // 打包模式
-    entry: pathJoin( pkg.entryDir + '/' + pkg.entryName), // 入口文件
+    entry: pathJoin( pkg.entryDir + '/' + pkg.oldEntryName), // 入口文件
     output: {
         path: pathJoin(`./${pkg.outputDir}`), // 输出目录
-        filename: pkg.outputName, // 输出文件
-        library: pkg.library, // 暴露到浏览器环境的全局变量名称
-        libraryTarget: pkg.libraryTarget, // 指定模块化规范
-        globalObject: pkg.globalObject, // 防止node端self报错
-
-        clean: true, // 清除上一次
+        filename: pkg.outputNameIe8, // 输出文件
+        clean: false, // 清除上一次
         environment: {
             arrowFunction: false ,// 打包后箭头函数
             bigIntLiteral: false, // 支持整型
@@ -33,21 +28,6 @@ module.exports = {
     experiments: {
         topLevelAwait: true, // webpack5必须开启,可直接使用await，不需要于async搭配
     },
-    plugins: [
-        // 输出项目信息
-        new webpack.BannerPlugin(`
-            ${pkg.name}
-            @description: ${pkg.description} \n
-                          ${pkg.descriptionCN} \n
-            @version ${pkg.version} \n
-            @date ${pkg.date} \n
-            @versions history\n
-                ${pkg.versionLists.join(' , ')} \n
-                ${pkg.versionDates.join(' , ')} \n
-            Released under the MIT License.
-            hash: [hash]
-        `),
-    ],
     resolve: {
         extensions:['.tsx', '.ts']
     },
@@ -56,7 +36,6 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 use: [
-                    // 'babel-loader',
                     'ts-loader'
                 ],
                 exclude: /node_modules/,
