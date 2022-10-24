@@ -15,9 +15,9 @@
 	"uiPrefix": "$",
 	"outputDir": "dist",
 	"types": "dist",
-	"buildDate": "2022-10-23 19:27:03",
-	"version": "1.0.8",
-	"date": "2022-10-15 22:45:46",
+	"buildDate": "2022-10-24 09:51:40",
+	"version": "2.0.1",
+	"date": "2022-10-23 19:35:03",
 	"versionLists": [
 		"1.0.1              ",
 		"1.0.2              ",
@@ -26,7 +26,8 @@
 		"1.0.5              ",
 		"1.0.6              ",
 		"1.0.7              ",
-		"1.0.8              "
+		"1.0.8              ",
+		"2.0.1              "
 	],
 	"versionDates": [
 		"2022-10-15 15:29:04",
@@ -36,7 +37,8 @@
 		"2022-10-15 16:00:44",
 		"2022-10-15 21:25:21",
 		"2022-10-15 22:14:22",
-		"2022-10-15 22:45:46"
+		"2022-10-15 22:45:46",
+		"2022-10-23 19:35:03"
 	],
 	"description": "Library based on raw JavaScript",
 	"descriptionCN": "基于原生JavaScript的库",
@@ -82,7 +84,6 @@
 	"mode": "production",
 	"outputName": "index.js",
 	"files": [
-		"dist",
 		"dist"
 	],
 	"main": "dist/index.js",
