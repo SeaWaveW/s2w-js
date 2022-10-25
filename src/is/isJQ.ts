@@ -4,6 +4,6 @@
  * @returns boolean
  */
 const isJQ = (value: any): boolean => {
-    return value instanceof jQuery
+    return window.jQuery && value instanceof window.jQuery
 }
 export default isJQ

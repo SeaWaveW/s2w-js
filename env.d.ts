@@ -1,5 +1,6 @@
 declare interface Window {
-    s2w: any
+    s2w: any,
+    jQuery: any
 }
 interface HTMLElementTagNameMap {
     "a": HTMLAnchorElement;

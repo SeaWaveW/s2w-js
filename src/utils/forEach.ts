@@ -28,26 +28,26 @@ const forEach = (value: any, callBack: Function, sort: Boolean = true) => {
         }
     }
     // 当为字符串时
-    if( isStr(value) ){
+    else if( isStr(value) ){
         for( let s = 0; s < value.length; s++ ){
-            sort ? callBack( value[s], s ) : callBack( s, value[s] )
+            sort ? callBack( value.substring(s,s+1), s ) : callBack( s, value.substring(s,s+1) )
         }
     }
     // 当为数组时
-    if( isArr(value) ){
+    else if( isArr(value) ){
         // 直接使用es的forEach方法
         value.forEach((item: any,index: any) => {
             sort ? callBack( item, index ) : callBack( index, item )
         })
     }
     // 当为对象时
-    if( isObj(value) ){
+    else if( isObj(value) ){
         Object.keys(value).forEach(key => {
             sort ? callBack( value[key], key ) : callBack( key, value[key] )
         })
     }
     // 当为JQ时
-    if( isJQ(value) ){
+    else if( isJQ(value) ){
         value.each((index:number, item: JQuery) =>{
             sort ? callBack( item, index ) : callBack( index, item )
         })
