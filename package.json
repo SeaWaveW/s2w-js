@@ -10,13 +10,15 @@
 		"is",
 		"ui",
 		"utils",
-		"np"
+		"np",
+		"shim"
 	],
 	"uiName": "ui",
 	"uiPrefix": "$",
+	"shimName": "shim",
 	"outputDir": "dist",
 	"types": "dist",
-	"buildDate": "2022-10-25 17:21:19",
+	"buildDate": "2022-10-25 18:11:19",
 	"version": "1.0.8",
 	"date": "2022-10-15 22:45:46",
 	"versionLists": [

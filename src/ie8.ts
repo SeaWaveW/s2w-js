@@ -1,3 +1,6 @@
+import './shim/ForEach.ts';
+import './shim/Object-keys.ts';
+
 import isArrS from './is/isArr';
 import isBooS from './is/isBoo';
 import isEnumS from './is/isEnum';

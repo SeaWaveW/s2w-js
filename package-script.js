@@ -63,6 +63,8 @@ const exportList = []
 const exportDefaultList = []
 // ie8及以下
 const globalList = []
+// 垫片列表
+const shimList = []
 
 // 生成导出
 const createExport = ( dirPath, dirName) => {
@@ -121,6 +123,17 @@ const createExport = ( dirPath, dirName) => {
     })
 } 
 
+// 创建垫片导入
+const createShim = (dirPath,dirName) => {
+    // 获取传入路径下的所有文件 并循环
+    fs.readdirSync(dirPath).forEach(fileName => {
+        // 加入队列
+        shimList.push(
+            `import './${dirName}/${fileName}';`
+        )
+    })
+}
+
 // 若子目录不为数组则进行转换
 if(!Array.isArray(pkg.childDirList)) pkg.childDirList = []
 // 若别名不为对象
@@ -131,8 +144,14 @@ pkg.childDirList.forEach(dirName => {
     const dirPath = path.resolve(__dirname, pkg.entryDir + '/' + dirName)
     // 若不存在该目录则创建
     if(!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
-    // 生成导入导出
-    createExport( dirPath, dirName)
+    
+    if(dirName === pkg.shimName){
+        // 生成垫片集
+        createShim(dirPath, dirName)
+    }else{
+        // 生成导入导出
+        createExport( dirPath, dirName)
+    }
 })
 
 // 更新项目信息
@@ -156,7 +175,9 @@ fs.writeFileSync(
 fs.writeFileSync(
     path.resolve(__dirname, pkg.entryDir + '/' + pkg.oldEntryName),
 
-    importList.join('\n')
+    shimList.join('\n')
+    + '\n\n'
+    + importList.join('\n')
     + '\n\n'
     + `window['${pkg.library}'] = {\n  ${globalList.join(',\n  ')} \n}`
 )

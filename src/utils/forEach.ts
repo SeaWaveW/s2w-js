@@ -5,10 +5,6 @@ import isArr from '../is/isArr'
 import isObj from '../is/isObj'
 import isJQ from '../is/isJQ'
 
-// 垫片
-import '../shim/ForEach' 
-import '../shim/Object-keys'
-
 /**
  * 循环方法
  * @param value 值
