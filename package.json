@@ -9,13 +9,14 @@
 	"childDirList": [
 		"is",
 		"ui",
-		"utils"
+		"utils",
+		"np"
 	],
 	"uiName": "ui",
 	"uiPrefix": "$",
 	"outputDir": "dist",
 	"types": "dist",
-	"buildDate": "2022-10-23 19:27:03",
+	"buildDate": "2022-10-25 16:06:16",
 	"version": "1.0.8",
 	"date": "2022-10-15 22:45:46",
 	"versionLists": [

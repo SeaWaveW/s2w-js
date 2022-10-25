@@ -14,10 +14,13 @@ export declare const browser: () => {
     version: string;
 };
 export declare const color: (color1: string, color2: string, ratio: number) => string;
-export declare const each: (value: any) => {
-    for: Function;
-};
+export declare const forEach: (value: any, callBack: Function, sort?: Boolean) => void;
+export declare const initial: (value: string) => string;
 export declare const random: (start: number, end: number, float: number) => number;
+export declare const except: (dividend: any, divisor: any) => number;
+export declare const plus: (augend: any, addend: any) => number;
+export declare const reduce: (minuend: any, subtract: any) => number;
+export declare const ride: (multiplicand: any, multiplier: any) => number;
 declare const _default: {
     isArr: (value: any) => boolean;
     isBoo: (value: any) => boolean;
@@ -35,9 +38,12 @@ declare const _default: {
         version: string;
     };
     color: (color1: string, color2: string, ratio: number) => string;
-    each: (value: any) => {
-        for: Function;
-    };
+    forEach: (value: any, callBack: Function, sort?: Boolean) => void;
+    initial: (value: string) => string;
     random: (start: number, end: number, float: number) => number;
+    except: (dividend: any, divisor: any) => number;
+    plus: (augend: any, addend: any) => number;
+    reduce: (minuend: any, subtract: any) => number;
+    ride: (multiplicand: any, multiplier: any) => number;
 };
 export default _default;

@@ -1,6 +1,6 @@
 import isNum from "../is/isNum"
 import isBoo from "../is/isBoo"
-import each from "./each"
+import forEach from "./forEach"
 /**
  * 生成随机数
  * @param start 开始数字
@@ -51,7 +51,7 @@ const random = (start: number, end: number, float: number):number => {
             // 若小数位数小于需要的
             if(floatStr.length < floatSum){
                 // 循环次数
-                each(floatSum - floatStr.length).for(()  => {
+                forEach(floatSum - floatStr.length, () => {
                     // 递归调用
                     floatStr += random(1,9,0)
                 })

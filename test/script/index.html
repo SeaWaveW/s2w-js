@@ -10,7 +10,14 @@
     <script src="./shim.js"></script>
     <script src="../../dist/s2w-js-min.js"></script>
     <script>
-        console.warn('s2w',s2w.isBoo(1), s2w.isArr({}));
+        console.warn('s2w',s2w.initial('嗨五'));
+        console.error('------------');
+        s2w.forEach(['w','s'],function(item,index){
+            console.log('item',item,'index',index)
+        })
+        s2w.forEach({a:'1', b:'8'},function(value,key){
+            console.log('value',value,'key',key)
+        })
     </script>
 </body>
 </html>

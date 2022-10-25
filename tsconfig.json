@@ -108,5 +108,5 @@
     "dist",
     "babel.config.ts",
     "src/ie8.ts"
-  ]
+  ],
 }
