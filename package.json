@@ -77,7 +77,8 @@
 		"webpack-merge": "^5.8.0"
 	},
 	"dependencies": {
-		"moment": "^2.29.4"
+		"moment": "^2.29.4",
+		"number-precision": "^1.6.0"
 	},
 	"mode": "production",
 	"outputName": "index.js",
