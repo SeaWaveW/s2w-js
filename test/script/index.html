@@ -7,17 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <script src="./shim.js"></script> -->
-    <script src="../../dist/s2w-js-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/s2w-js@1.0.9/dist/s2w-js.min.js"></script> 
     <script>
-        console.warn('s2w',s2w.initial('嗨五'));
-        console.error('------------');
-        s2w.forEach(['w','s'],function(item,index){
-            console.log('item',item,'index',index)
-        })
-        s2w.forEach({a:'1', b:'8'},function(value,key){
-            console.log('value',value,'key',key)
-        })
+        console.warn('s2wJS',s2wJS.isBoo(1),s2wJS.isBoo(false));
+        console.log('s2w',s2w.isBoo(1),s2w.isBoo(false));
     </script>
 </body>
 </html>

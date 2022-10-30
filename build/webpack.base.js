@@ -1,17 +1,13 @@
-const pkg = require('./package.json') // 获取项目信息
+const pkg = require('../package.json') // 获取项目信息
 
-const pathJoin = (filePath) => require('path').resolve(__dirname,filePath)
+const pathJoin = (filePath) => require('path').resolve(__dirname,filePath) // 路径拼接
 
-// 代码压缩
-const TerserWebpackPlugin = require('terser-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin') // 代码压缩
 
 module.exports = {
-    mode: pkg.mode, // 打包模式
-    entry: pathJoin( pkg.entryDir + '/' + pkg.oldEntryName), // 入口文件
+    mode: 'production', // 打包模式
     output: {
-        path: pathJoin(`./${pkg.outputDir}`), // 输出目录
-        filename: pkg.outputNameIe8, // 输出文件
-        clean: false, // 清除上一次
+        path: pathJoin('../' + pkg.output), // 输出目录
         environment: {
             arrowFunction: false ,// 打包后箭头函数
             bigIntLiteral: false, // 支持整型
@@ -35,11 +31,9 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: [
-                    'ts-loader'
-                ],
+                use: [ 'ts-loader' ],
                 exclude: /node_modules/,
-            }
+            },
         ]
     },
     optimization:{

@@ -1,62 +1,30 @@
 {
 	"name": "s2w-js",
-	"library": "s2w",
-	"libraryTarget": "umd",
-	"globalObject": "this",
-	"entryDir": "src",
-	"entryName": "index.ts",
-	"oldEntryName": "ie8.ts",
-	"childDirList": [
-		"is",
-		"ui",
-		"utils",
-		"np",
-		"shim"
-	],
-	"uiName": "ui",
-	"uiPrefix": "$",
-	"shimName": "shim",
-	"outputDir": "dist",
-	"types": "dist",
-	"buildDate": "2022-10-25 18:11:19",
-	"version": "1.0.8",
-	"date": "2022-10-15 22:45:46",
-	"versionLists": [
-		"1.0.1              ",
-		"1.0.2              ",
-		"1.0.3              ",
-		"1.0.4              ",
-		"1.0.5              ",
-		"1.0.6              ",
-		"1.0.7              ",
-		"1.0.8              "
-	],
-	"versionDates": [
-		"2022-10-15 15:29:04",
-		"2022-10-15 15:43:59",
-		"2022-10-15 15:49:27",
-		"2022-10-15 15:57:47",
-		"2022-10-15 16:00:44",
-		"2022-10-15 21:25:21",
-		"2022-10-15 22:14:22",
-		"2022-10-15 22:45:46"
-	],
+	"version": "1.0.9",
 	"description": "Library based on raw JavaScript",
 	"descriptionCN": "基于原生JavaScript的库",
+	"entry": "src",
+	"output": "dist",
+	"files": [
+		"dist"
+	],
+	"types": "dist",
 	"scripts": {
-		"build": "node ./package-script.js --mode=production && webpack && npm run ie8prev",
-		"build-small": "node ./package-script.js --mode=production --type=small && webpack && npm run ie8prev",
-		"build-middle": "node ./package-script.js --mode=production --type=middle && webpack && npm run ie8prev",
-		"build-large": "node ./package-script.js --mode=production --type=large  && webpack && npm run ie8prev",
+		"build": "node build/script/buildBefore.js  && npm run library && npm run script && npm run after",
+		"library": "webpack --config build/webpack.library.js",
+		"script": "webpack --config build/webpack.script.js",
+		"after": "node build/script/buildAfter.js",
+		"build-small": "node build/script/buildBefore.js --type=small && npm run library && npm run script && npm run after && npm publish",
+		"build-middle": "node build/script/buildBefore.js -type=middle && npm run library && npm run script && npm run after && npm publish",
+		"build-large": "node build/script/buildBefore.js --type=large  && npm run library && npm run script && npm run after && npm publish",
 		"test-script": "node test/script/index.js",
-		"test-esModule": "webpack-dev-server --config test/esModule/webpack.test.js",
-		"test-common": "node ./test/common.js",
-		"ie8prev": "webpack --config ./webpack.ie8prev.js"
+		"test-module": "webpack-dev-server --config test/module/webpack.test.js",
+		"test-common": "node ./test/common/index.js"
 	},
 	"keywords": [
-		"js",
-		"js-ui",
+		"s2w-js",
 		"s2w",
+		"js",
 		"utils",
 		"tools"
 	],
@@ -77,18 +45,12 @@
 		"webpack": "^5.74.0",
 		"webpack-cli": "^4.10.0",
 		"webpack-dev-server": "^4.11.1",
-		"webpack-merge": "^5.8.0"
+		"webpack-merge": "^5.8.0",
+		"s2w-js": "^1.0.9",
+		"moment": "^2.29.4"
 	},
 	"dependencies": {
-		"moment": "^2.29.4",
 		"number-precision": "^1.6.0"
 	},
-	"mode": "production",
-	"outputName": "index.js",
-	"files": [
-		"dist"
-	],
-	"main": "dist/index.js",
-	"outputNameIe8": "s2w-js-min.js",
-	"ie8": false
+	"main": "dist/index.js"
 }
